@@ -1,0 +1,22 @@
+.slider {
+    width: 128px; /* w-32 */
+    border-radius: 8px; /* rounded-lg */
+    border: 1px solid #fff;
+    padding: 8px 16px; /* px-4 py-2 */
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 0 4px;
+  }
+  
+  .range {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #94a3b8;
+    margin-top: 8px;
+  }
+  
