@@ -12,32 +12,14 @@ const initialQueryParams: Pick<IStore, 'queryParams'> = {
     }
 }
 
-// const useFiltersStore = create<IStore>((set) => ({
-//     ...initialQueryParams,
-//     isFilterUpdated: true,
-//     updateQueryParams: ({ key, value }) =>
-//       set((state) => ({
-//         queryParams: { ...state.queryParams, [key]: value },
-//         isFilterUpdate: true,
-//       })),
-//     resetFilterUpdate: () =>
-//       set(() => ({
-//         isFilterUpdate: false,
-//       })),
-//     reset: () => set(() => ({ ...initialQueryParams, isFilterUpdate: true })),
-//   }));
-
-  const useFiltersStore1 = create<IStore>((set) => ({
-    queryParams: { ...initialQueryParams.queryParams }, // Инициализируем queryParams
-    isFilterUpdated: false, // Инициализируем isFilterUpdated
+  const useFilterStore = create<IStore>((set) => ({
+    ...initialQueryParams ,
+    isFilterUpdated: false,
+    
     updateQueryParam: ({ key, value }) =>
       set((state) => ({
         queryParams: { ...state.queryParams, [key]: value },
         isFilterUpdated: true,
-      })),
-    resetFilterUpdate: () =>
-      set(() => ({
-        isFilterUpdated: false,
       })),
     reset: () =>
       set(() => ({
@@ -48,4 +30,4 @@ const initialQueryParams: Pick<IStore, 'queryParams'> = {
   
 
 
-export default useFiltersStore;
+export default useFilterStore;

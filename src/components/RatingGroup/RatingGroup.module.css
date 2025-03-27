@@ -1,0 +1,11 @@
+.radio {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
