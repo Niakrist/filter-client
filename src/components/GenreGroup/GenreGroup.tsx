@@ -1,5 +1,4 @@
-import { Checkbox } from "@/ui";
-import { FilterWrapper } from "@/ui/FilterWrapper/FilterWrapper";
+import { Checkbox, FilterWrapper } from "@/ui";
 import React from "react";
 import { useFilters } from "@/hooks/useFilters";
 import { GENRE_VARIANTS } from "./genre-variant.data";
