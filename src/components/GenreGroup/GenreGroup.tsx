@@ -9,6 +9,7 @@ export const GenreGroup = (): React.JSX.Element => {
     <FilterWrapper title="Genre">
       {GENRE_VARIANTS.map((genre) => (
         <Checkbox
+          key={genre}
           type="checkbox"
           isChecked={queryParams.genres?.includes(genre) || false}
           onChange={() => {
@@ -23,7 +24,8 @@ export const GenreGroup = (): React.JSX.Element => {
             } else {
               updateQueryParams("genres", [...currentGenres, genre].join("|"));
             }
-          }}>
+          }}
+        >
           {genre}
         </Checkbox>
       ))}
