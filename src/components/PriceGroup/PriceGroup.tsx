@@ -19,7 +19,7 @@ export const PriceGroup = () => {
           updateQueryParams("minPrice", value.toString())
         }
         onChangeToValue={(value) => {
-        //   updateQueryParams("maxPrice", value.toString());
+          updateQueryParams("maxPrice", value.toString());
         }}></Range>
     </FilterWrapper>
   );
