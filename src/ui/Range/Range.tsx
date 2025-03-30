@@ -1,13 +1,14 @@
 "use client";
-import { useDebounce } from "@/hooks/useDebounce";
-import Slider from "rc-slider";
 import React, { useEffect, useState } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import { useDebounce } from "@/hooks/useDebounce";
 import styles from "./Range.module.css";
 
 interface IRangeProps {
   min?: number;
   max: number;
-  formInitialValue?: number;
+  fromInitialValue?: number;
   toInitialValue?: number;
   onChangeFromValue: (value: number) => void;
   onChangeToValue: (value: number) => void;
@@ -18,10 +19,10 @@ export const Range: React.FC<IRangeProps> = ({
   max,
   onChangeFromValue,
   onChangeToValue,
-  formInitialValue = 0,
+  fromInitialValue = 0,
   toInitialValue = max,
 }) => {
-  const [fromValue, setFormValue] = useState(formInitialValue);
+  const [fromValue, setFormValue] = useState(fromInitialValue);
   const [toValue, setToValue] = useState(toInitialValue);
 
   const debouncedFromValue = useDebounce(fromValue, 500);
@@ -36,14 +37,18 @@ export const Range: React.FC<IRangeProps> = ({
     onChangeToValue(debouncedTovalue);
   }, [debouncedTovalue]);
 
+  useEffect(() => {
+    setToValue(toInitialValue);
+    setFormValue(fromInitialValue);
+  }, [toInitialValue, fromInitialValue]);
+
   return (
     <div className={styles.container}>
       <Slider
-        className={styles.slider}
         range
         min={min}
         max={max}
-        defaultValue={[formInitialValue, toInitialValue]}
+        value={[fromValue, toValue]}
         onChange={(value) => {
           if (typeof value === "object") {
             setFormValue(value[0]);
@@ -52,8 +57,8 @@ export const Range: React.FC<IRangeProps> = ({
         }}
       />
       <div className={styles.range}>
-        <span>От: ${formInitialValue}</span>
-        <span>До: ${toInitialValue}</span>
+        <span>От: ${fromValue}</span>
+        <span>До: ${toValue}</span>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export const Platform = () => {
   });
 
   const handleChangePlatform = (item: {label: string, key: string}) => {
-    updateQueryParams('platform', item.key)
+    updateQueryParams('platform', item.key  )
   };
 
   return (

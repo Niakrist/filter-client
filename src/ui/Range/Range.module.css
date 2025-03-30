@@ -1,12 +1,4 @@
-.slider {
-    width: 128px; /* w-32 */
-    border-radius: 8px; /* rounded-lg */
-    border: 1px solid #fff;
-    padding: 8px 16px; /* px-4 py-2 */
-    outline: none;
-    transition: all 0.2s ease;
-  }
-  
+
   .container {
     width: 100%;
     padding: 0 4px;

@@ -7,14 +7,14 @@ import {
   } from "react";
   
   type TypeOut = {
-    ref: React.RefObject<HTMLElement | null>;
+    ref: any;
     isShow: boolean;
     setIsShow: Dispatch<SetStateAction<boolean>>;
   };
   
   export const useOutside = (initialIsVisible: boolean): TypeOut => {
     const [isShow, setIsShow] = useState(initialIsVisible);
-    const ref = useRef<HTMLElement>(null);
+    const ref = useRef<any>(null);
   
     const handleClickOutside = (event: Event) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
