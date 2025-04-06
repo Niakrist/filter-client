@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchField, GenreGroup, RatingGroup, Switcher, PriceGroup } from "@/components";
+import { SearchField, GenreGroup, RatingGroup, Switcher, PriceGroup, ResetButton } from "@/components";
 import { Platform } from "../PlatformGroup/PlatformGroup";
 
 export const Filters = () => {
@@ -11,6 +11,7 @@ export const Filters = () => {
       <RatingGroup />
       <Switcher />
       <Platform />
+      <ResetButton />
     </div>
   );
 };

@@ -15,12 +15,13 @@ export const PriceGroup = () => {
         toInitialValue={
           queryParams.maxPrice ? Number(queryParams.maxPrice) : undefined
         }
-        onChangeFromValue={(value) =>
-          updateQueryParams("minPrice", value.toString())
-        }
+        onChangeFromValue={(value) => {
+          updateQueryParams("minPrice", value.toString());
+        }}
         onChangeToValue={(value) => {
           updateQueryParams("maxPrice", value.toString());
-        }}></Range>
+        }}
+      ></Range>
     </FilterWrapper>
   );
 };
